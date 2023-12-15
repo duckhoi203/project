@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               onSubmitted: (value) {},
               decoration: const InputDecoration(
-                  labelText: 'Search', suffixIcon: Icon(Icons.search)),
+                  labelText: 'Search', suffixIcon: Icon(Icons.clear)),
             ),
             const SizedBox(height: 20),
             Expanded(
@@ -108,12 +108,13 @@ class DetailView extends StatelessWidget {
         title: Text(word),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(32.0),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(pronounce),
+              Text(word, style: Theme.of(context).textTheme.headline6),
+              Text('/$pronounce/', style: TextStyle(fontSize: 20,color: Colors.grey)),
               Text(definition),
             ],
           ),
